@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title id="metaTitle">eSIMDZ</title>
+  <meta name="description" content="eSIMDZ — eSIM store.">
+  <meta property="og:image" content="/images/og.jpg">
+  <link rel="icon" href="/favicon.ico?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1220;--muted:#94a3b8;--prime:#0EA5E9;--radius:18px;--ring: rgba(14,165,233,.35);}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#0b1220;color:#e5e7eb;font-family:'Inter',system-ui}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1200px,92%);margin-inline:auto}
+    header.nav{position:sticky;top:0;background:rgba(11,18,32,.7);backdrop-filter:saturate(180%) blur(12px);z-index:50;border-bottom:1px solid rgba(255,255,255,.06)}
+    header .row{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:.7rem}
+    .logo-img{width:34px;height:34px;border-radius:10px;box-shadow:0 4px 18px rgba(14,165,233,.4)}
+    nav a{padding:.4rem .7rem;border-radius:10px;color:#cbd5e1}
+    nav a:hover{background:rgba(148,163,184,.15)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1rem;border-radius:12px;background:linear-gradient(180deg,#22d3ee,#0ea5e9);color:#001018;font-weight:700}
+    .btn.secondary{background:transparent;border:1px solid rgba(148,163,184,.35);color:#e2e8f0}
+    .topbar{background:linear-gradient(90deg, rgba(34,197,94,.16), rgba(14,165,233,.16));border-bottom:1px solid rgba(255,255,255,.06)}
+    .topbar .row{display:flex;gap:10px;justify-content:center;align-items:center;padding:8px 0;color:#bbf7d0}
+    .lang{display:inline-flex;border:1px solid rgba(148,163,184,.35);border-radius:999px;overflow:hidden}
+    .lang button{background:transparent;color:#cbd5e1;border:0;padding:.45rem .7rem;cursor:pointer}
+    .lang button.active{background:#0ea5e933;color:#e5e7eb}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container row"><span id="topbar"></span></div></div>
+  <header class="nav">
+    <div class="container row">
+      <a class="brand" href="#home" aria-label="eSIMDZ Home">
+        <img class="logo-img" src="images/logo.png" alt="eSIMDZ logo" />
+        <strong>eSIMDZ</strong>
+      </a>
+      <nav>
+        <a href="https://instagram.com/esimdz" target="_blank" rel="noopener">IG</a>
+        <a href="https://t.me/esimdz" target="_blank" rel="noopener">TG</a>
+        <a href="https://tiktok.com/@esimdz" target="_blank" rel="noopener">TT</a>
+        <a href="https://facebook.com/esimdz" target="_blank" rel="noopener">FB</a>
+        <span class="lang" style="margin-inline-start:8px">
+          <button data-lang="ar" class="active">AR</button>
+          <button data-lang="en">EN</button>
+          <button data-lang="fr">FR</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding:36px 0">
+    <section id="home">
+      <h1 id="heroTitle"></h1>
+      <p id="heroLead" style="color:#cbd5e1"></p>
+      <div style="display:flex;gap:8px;margin:12px 0 22px">
+        <a class="btn" href="#plans" id="ctaBrowse"></a>
+        <a class="btn secondary" href="#how" id="ctaHow"></a>
+      </div>
+    </section>
+
+    <section id="plans">
+      <h2 id="plansTitle"></h2>
+      <div style="display:flex;gap:6px;margin:8px 0 14px">
+        <span class="btn secondary" id="pillDZ"></span>
+        <span class="btn secondary" id="pillINTL"></span>
+        <span class="btn secondary" id="pillTOUR"></span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <article style="border:1px solid rgba(148,163,184,.25);border-radius:14px;padding:14px">
+          <h3 id="dzTitle"></h3><div id="dzSub" style="color:#94a3b8"></div><div id="dzPrice" style="font-weight:800;font-size:1.2rem;margin:6px 0"></div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a class="btn" id="buyNowDZ" target="_blank" rel="noopener"></a>
+            <a class="btn secondary" href="#faq" id="isCompatible"></a>
+          </div>
+        </article>
+        <article style="border:1px solid rgba(148,163,184,.25);border-radius:14px;padding:14px">
+          <h3 id="intlTitle"></h3><div id="intlSub" style="color:#94a3b8"></div><div id="intlPrice" style="font-weight:800;font-size:1.2rem;margin:6px 0"></div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a class="btn" id="pickPlan" target="_blank" rel="noopener"></a>
+            <a class="btn secondary" href="#coverage" id="coverage"></a>
+          </div>
+        </article>
+        <article style="border:1px solid rgba(148,163,184,.25);border-radius:14px;padding:14px">
+          <h3 id="tourTitle"></h3><div id="tourSub" style="color:#94a3b8"></div><div id="tourPrice" style="font-weight:800;font-size:1.2rem;margin:6px 0"></div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a class="btn" id="tryNow" target="_blank" rel="noopener"></a>
+            <a class="btn secondary" href="#how" id="howLink"></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="how" style="margin-top:26px">
+      <h2 id="howTitle"></h2>
+      <ul style="line-height:1.9;color:#cbd5e1">
+        <li><strong id="how1"></strong> — <span id="how1s"></span></li>
+        <li><strong id="how2"></strong> — <span id="how2s"></span></li>
+        <li><strong id="how3"></strong> — <span id="how3s"></span></li>
+        <li><strong id="how4"></strong> — <span id="how4s"></span></li>
+      </ul>
+    </section>
+
+    <section id="faq" style="margin-top:26px">
+      <h2 id="faqTitle"></h2>
+      <details><summary id="faq1q"></summary><p id="faq1a"></p></details>
+      <details><summary id="faq2q"></summary><p id="faq2a"></p></details>
+      <details><summary id="faq3q"></summary><p id="faq3a"></p></details>
+      <details><summary id="faq4q"></summary><p id="faq4a"></p></details>
+    </section>
+
+    <section id="contact" style="margin-top:26px">
+      <h2 id="contactTitle"></h2>
+      <p><a class="btn" id="contactWhats" target="_blank" rel="noopener"></a></p>
+      <form onsubmit="event.preventDefault(); alert('✓'); this.reset();" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div><label id="formNameL"></label><input type="text" required></div>
+        <div><label id="formEmailL"></label><input type="email" required></div>
+        <div style="grid-column:1/-1"><label id="formTypeL"></label><input type="text"></div>
+        <div style="grid-column:1/-1"><label id="formMsgL"></label><textarea rows="4"></textarea></div>
+        <div style="grid-column:1/-1"><button class="btn" id="sendBtn"></button> <span id="avgReply" style="color:#94a3b8;margin-inline-start:8px"></span></div>
+      </form>
+    </section>
+  </main>
+
+  <footer style="border-top:1px solid rgba(255,255,255,.1);padding:18px 0">
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <div>
+        <strong>eSIMDZ</strong>
+        <div style="margin-top:6px">
+          <a href="https://instagram.com/esimdz" target="_blank" rel="noopener">Instagram</a> ·
+          <a href="https://t.me/esimdz" target="_blank" rel="noopener">Telegram</a> ·
+          <a href="https://tiktok.com/@esimdz" target="_blank" rel="noopener">TikTok</a> ·
+          <a href="https://facebook.com/esimdz" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div><span id="rights"></span></div>
+    </div>
+  </footer>
+
+  <script>
+    async function setLang(code){
+      const res = await fetch('i18n.json'); const data = await res.json();
+      const t = data[code]; if(!t) return;
+      document.documentElement.lang = code; document.documentElement.dir = t.dir;
+      document.getElementById('metaTitle').textContent = t.metaTitle;
+      // hero
+      heroTitle.textContent=t.heroTitle; heroLead.textContent=t.heroLead;
+      ctaBrowse.textContent=t.ctaBrowse; ctaHow.textContent=t.ctaHow;
+      // plans
+      plansTitle.textContent=t.plans; pillDZ.textContent=t.pillDZ; pillINTL.textContent=t.pillINTL; pillTOUR.textContent=t.pillTOUR;
+      dzTitle.textContent=t.dzTitle; dzSub.textContent=t.dzSub; dzPrice.textContent=t.dzPrice;
+      intlTitle.textContent=t.intlTitle; intlSub.textContent=t.intlSub; intlPrice.textContent=t.intlPrice;
+      tourTitle.textContent=t.tourTitle; tourSub.textContent=t.tourSub; tourPrice.textContent=t.tourPrice;
+      buyNowDZ.textContent=t.buyNow; buyNowDZ.href=t.buyWA+'?text='+encodeURIComponent(t.buyNow+' - Algeria 10GB');
+      isCompatible.textContent=t.isCompatible;
+      pickPlan.textContent=t.pickPlan; pickPlan.href=t.buyWA+'?text='+encodeURIComponent(t.pickPlan+' - Global');
+      coverage.textContent=t.coverage;
+      tryNow.textContent=t.tryNow; tryNow.href=t.buyWA+'?text='+encodeURIComponent(t.tryNow+' - Travel');
+      howLink.textContent=t.ctaHow;
+      // how
+      howTitle.textContent=t.howTitle; how1.textContent=t.how1; how1s.textContent=t.how1s; how2.textContent=t.how2; how2s.textContent=t.how2s;
+      how3.textContent=t.how3; how3s.textContent=t.how3s; how4.textContent=t.how4; how4s.textContent=t.how4s;
+      // faq
+      faqTitle.textContent=t.faq; faq1q.textContent=t.faq1q; faq1a.textContent=t.faq1a; faq2q.textContent=t.faq2q; faq2a.textContent=t.faq2a;
+      faq3q.textContent=t.faq3q; faq3a.textContent=t.faq3a; faq4q.textContent=t.faq4q; faq4a.textContent=t.faq4a;
+      // contact
+      contactTitle.textContent=t.contact; contactWhats.textContent=t.contactWhats; contactWhats.href=t.buyWA;
+      formNameL.textContent=t.formName; formEmailL.textContent=t.formEmail; formTypeL.textContent=t.formType; formMsgL.textContent=t.formMsg;
+      sendBtn.textContent=t.send; avgReply.textContent=t.avgReply;
+      // topbar & rights
+      topbar.textContent=t.topbar; rights.textContent=t.rights;
+      // set active button
+      document.querySelectorAll('.lang button').forEach(b=>b.classList.remove('active'));
+      document.querySelector('.lang button[data-lang="'+code+'"]').classList.add('active');
+      localStorage.setItem('esimdz_lang', code);
+    }
+    document.querySelectorAll('.lang button').forEach(btn=>btn.addEventListener('click',()=>setLang(btn.dataset.lang)));
+    setLang(localStorage.getItem('esimdz_lang')||'ar');
+  </script>
+
+  <!-- Analytics placeholders -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js', new Date());gtag('config','G-XXXXXXX');
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[]; t=b.createElement(e); t.async=!0;
+    t.src=v; s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1234567890'); fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1234567890&ev=PageView&noscript=1"/></noscript>
+</body>
+</html>
